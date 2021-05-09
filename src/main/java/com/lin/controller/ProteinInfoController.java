@@ -34,4 +34,29 @@ public class ProteinInfoController {
         return proteinInfoService.findByNameLike(name);
     }
 
+    /**
+     * 添加
+     */
+    @PostMapping("/addProteinInfo")
+    public String add(@RequestBody ProteinInfo proteinInfo) {
+        return proteinInfoService.addProteinInfo(proteinInfo);
+    }
+
+    /**
+     * 修改
+     */
+    @PutMapping("/updateProteinInfo")
+    public String update(@RequestBody ProteinInfo proteinInfo) {
+        return proteinInfoService.updateProteinInfo(proteinInfo);
+    }
+
+
+    /**
+     * 删除
+     */
+    @DeleteMapping("/deleteProteinInfo")
+    public String delete(@RequestBody ProteinInfo proteinInfo) {
+        return proteinInfoService.deleteProteinInfo(proteinInfo);
+    }
+
 }

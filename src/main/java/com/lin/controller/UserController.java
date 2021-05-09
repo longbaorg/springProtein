@@ -33,4 +33,10 @@ public class UserController {
 	public String loginUser(@RequestBody User user) {
 		return loginService.loginUser(user);
 	}
+
+	@PostMapping(value="/loginAdmin")
+	public String loginUserAdmin(@RequestBody User user) {
+		return loginService.loginUserAdmin(user);
+	}
+
 }

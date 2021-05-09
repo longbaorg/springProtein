@@ -33,4 +33,7 @@ public class User {
 
     @Column(name="is_enabled")
     private int isEnabled;
+
+    @Column(name="flash")
+    private int flash;
 }

@@ -34,4 +34,30 @@ public class LoginService {
         else
             return "Your Acount don't exist, Please register!";
     }
+
+
+    public String loginUserAdmin(User user) {
+        User existingUser = userRepository.findByEmailAdmin(user.getEmail());
+        if (existingUser != null ) {
+            //邮箱未激活
+            if (existingUser.getIsEnabled()==0) {
+                return ("The email not verified");
+            }
+            //是否是超级管理员登录
+            else if (existingUser.getFlash() == 0){
+                return ("This account is not admin");
+            }
+            //登录成功
+            else if (encoder.matches(user.getPassword(), existingUser.getPassword())){
+                return ("sucess");
+            }
+            //密码错误
+            else {
+                return ("Incorrect password. Try again");
+            }
+        }
+        //未注册
+        else
+            return "Your Acount don't exist, Please register!";
+    }
 }
