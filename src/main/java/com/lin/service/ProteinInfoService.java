@@ -40,9 +40,9 @@ public class ProteinInfoService {
     public String addProteinInfo(ProteinInfo proteinInfo ){
         String returns = "";
 
-        if (proteinInfo.getName() == null || proteinInfo.getClassification() == null|| proteinInfo.getOrganism() == null|| proteinInfo.getExpressionSystem() == null
-                || proteinInfo.getDeposited() == null|| proteinInfo.getDepositionAuthor() == null|| proteinInfo.getFastaSequence() == null
-                || proteinInfo.getImageUrl() == null){
+        if (proteinInfo.getName() == null || proteinInfo.getClassification() == null|| proteinInfo.getOrganism() == null||
+                proteinInfo.getExpressionSystem() == null || proteinInfo.getDeposited() == null||
+                proteinInfo.getDepositionAuthor() == null|| proteinInfo.getFastaSequence() == null || proteinInfo.getImageUrl() == null){
             returns = "新增失败";
         }else {
             String simpleUUID = IdUtil.simpleUUID();

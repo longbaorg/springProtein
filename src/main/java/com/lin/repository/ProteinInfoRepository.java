@@ -23,7 +23,7 @@ public interface ProteinInfoRepository extends JpaRepository<ProteinInfo, Intege
      * 查询ByName
      * @return
      */
-    @Query(value = "select * from protein_info t where t.name like %?1%" , nativeQuery = true)
+    @Query(value = "select * from protein_info t where t.name = ?1 " , nativeQuery = true)
     public ProteinInfo findByNameLike(String name);
 
     /**
